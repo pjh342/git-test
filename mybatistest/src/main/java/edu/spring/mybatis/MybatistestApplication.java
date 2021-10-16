@@ -15,6 +15,8 @@ public class MybatistestApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MybatistestApplication.class, args);
+		System.out.println("ai 9009서버 시작");
+		
 	}
 
 }
