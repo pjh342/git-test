@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product.ProductDAO" >
+					<!-- 안에 #{} 이게 있으면 parameterType 지정은 필수!!!! -->
+					<!-- resultType="product 테이블에서 조회한 1개의 레코드를 정의하는 자바 클래스(ex. 테이블명VO)타입" -->
+<select id="productList" resultType="pro">
+select * from product
+</select>
+
+<select id="productOne" resultType="pro" parameterType="String">
+select * from product where prdNo = #{prdNo};
+</select>
+
+<insert id="productInsert" parameterType="pro">
+insert into product values(
+#{prdNo}, #{prdName}, #{prdPrice}, #{prdCompany}, #{prdStock}
+)
+</insert>
+
+<update id="productUpdate" parameterType="pro">
+update product set prdPrice = #{prdPrice} where prdNo = #{prdNo}
+</update>
+
+<delete id="productDelete" parameterType="int">
+delete product where prdStock = #{prdStock}
+</delete>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
